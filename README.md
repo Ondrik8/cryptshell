@@ -20,7 +20,7 @@ Passive AES Encrypted C2 Campaign Management
 - [the first four steps from cryptshell, replacing cryptshell with c2cryptshell]
 - run c2cryptgen.sh on attack box
 - kill the connection on the attack box after the connection is made
-- [repeat steps 2 and 3 until all bots have made the connection]
+- [repeat steps 2 and 3, per set of instructions, until all bots have made the connection]
 
 ## red team notes
 - stagger crons on bots so that they do not all try and connect at the same time, and keep note of which bots call back when so you can track who recieved what instructions
