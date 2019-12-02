@@ -1,5 +1,5 @@
 # cryptshell
-AES Encrypted C2 Campaign Management
+Active AES Encrypted C2 Campaign Management
 
 ## usage
 - pwn target
@@ -12,3 +12,15 @@ AES Encrypted C2 Campaign Management
 - pipe c2 commands through aescrypt and a socket to your target (the listener and decrypter are on a cron): echo "touch tmp" | aescrypt -e -k aes.key - | nc target $LPORT
 	- since it runs on a cron, you can only send one payload per cron cycle, so I suggest you prepare scripted one liners
 	- you will know if the commands were sent if you run the command and the connection hangs, wait a few seconds and force quit it
+
+# c2cryptshell
+Passive AES Encrypted C2 Campaign Management
+
+## usage
+- [the first four steps from cryptshell, replacing cryptshell with c2cryptshell]
+- run c2cryptgen.sh on attack box
+- kill the connection on the attack box after the connection is made
+- [repeat steps 2 and 3 until all bots have made the connection]
+
+## red team notes
+- stagger crons on bots so that they do not all try and connect at the same time, and keep note of which bots call back when so you can track who recieved what instructions
